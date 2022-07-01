@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Documenten/2022" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Documenten/2022" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2022.0">
+	<xsd:element name="Documenten">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="BrAlg">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="BrCd">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="5"/>
+										<xsd:enumeration value="00500"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VnrBrCd">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="5"/>
+										<xsd:enumeration value="00005"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="AandatBr" type="xsd:date"/>
+							<xsd:element name="AantijdBr" type="xsd:time"/>
+							<xsd:element name="IdInzndr" type="str:IdentificatieInzender"/>
+							<xsd:element name="IdOntvngr" type="str:IdentificatieOntvanger"/>
+							<xsd:element name="Berrefnr" type="str:Berichtreferentienummer"/>
+							<xsd:element name="TestJN">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="1"/>
+										<xsd:pattern value="\D*"/>
+										<xsd:enumeration value="J"/>
+										<xsd:enumeration value="N"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="OntvngstbevJN">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="1"/>
+										<xsd:pattern value="\D*"/>
+										<xsd:enumeration value="J"/>
+										<xsd:enumeration value="N"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Wrkgvr" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="HndlsnmOrg" type="str:HandelsnaamOrganisatie"/>
+							<xsd:element name="InschrijvingsnrKvK" type="str:Nummer" minOccurs="0"/>
+							<xsd:element name="VestigingsnrHandelsregister" type="str:VestigingsnummerHandelsregister" minOccurs="0"/>
+							<xsd:element name="IdWrkgvrArbdnst" type="str:IdentificatieWerkgever"/>
+							<xsd:element name="AansltnrGeguitwlngArbdnst" type="str:AansluitnummerGegevensuitwisseling"/>
+							<xsd:element name="Lhnr" type="str:Loonheffingnummer" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="CntprsnOntvanger" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Achternaam" type="str:Achternaam"/>
+							<xsd:element name="Voorl" type="str:Voorletters" minOccurs="0"/>
+							<xsd:element name="Roepnaam" type="str:Roepnaam" minOccurs="0"/>
+							<xsd:element name="GslchtCd" type="str:Geslacht" minOccurs="0"/>
+							<xsd:element name="Com" minOccurs="0" maxOccurs="9">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SrtComCd">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:length value="2"/>
+													<xsd:enumeration value="06"/>
+													<xsd:enumeration value="08"/>
+													<xsd:enumeration value="10"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="NrCom" type="str:NummerAdresCommunicatie"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="CntprsnZender" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Achternaam" type="str:Achternaam"/>
+							<xsd:element name="Voorl" type="str:Voorletters" minOccurs="0"/>
+							<xsd:element name="Roepnaam" type="str:Roepnaam" minOccurs="0"/>
+							<xsd:element name="GslchtCd" type="str:Geslacht" minOccurs="0"/>
+							<xsd:element name="Com" minOccurs="0" maxOccurs="9">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SrtComCd">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:length value="2"/>
+													<xsd:enumeration value="06"/>
+													<xsd:enumeration value="08"/>
+													<xsd:enumeration value="10"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="NrCom" type="str:NummerAdresCommunicatie"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Document" maxOccurs="9999">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="IdDocument" type="str:IdentificatieDocument"/>
+							<xsd:element name="IdDocumentOud" type="str:IdentificatieDocument" minOccurs="0"/>
+							<xsd:element name="DatDocument" type="xsd:date"/>
+							<xsd:element name="SrtDocumentCd">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="3"/>
+										<xsd:enumeration value="100"/>
+										<xsd:enumeration value="104"/>
+										<xsd:enumeration value="158"/>
+										<xsd:enumeration value="208"/>
+										<xsd:enumeration value="215"/>
+										<xsd:enumeration value="217"/>
+										<xsd:enumeration value="219"/>
+										<xsd:enumeration value="250"/>
+										<xsd:enumeration value="253"/>
+										<xsd:enumeration value="303"/>
+										<xsd:enumeration value="305"/>
+										<xsd:enumeration value="306"/>
+										<xsd:enumeration value="451"/>
+										<xsd:enumeration value="453"/>
+										<xsd:enumeration value="558"/>
+										<xsd:enumeration value="601"/>
+										<xsd:enumeration value="700"/>
+										<xsd:enumeration value="701"/>
+										<xsd:enumeration value="909"/>
+										<xsd:enumeration value="916"/>
+										<xsd:enumeration value="918"/>
+										<xsd:enumeration value="919"/>
+										<xsd:enumeration value="999"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="SrtDocumentOms" type="str:Omschrijving70" minOccurs="0"/>
+							<xsd:element name="StatDocumentCd" type="str:StatusDocument" minOccurs="0"/>
+							<xsd:element name="KenmerkZendPartij" type="str:Berichtreferentienummer"/>
+							<xsd:element name="RdAanlevDocumentCd" type="str:RedenAanleveringDocument" minOccurs="0"/>
+							<xsd:element name="PrioriteitCd" type="str:Prioriteit" minOccurs="0"/>
+							<xsd:element name="BestandTypCd" type="str:Bestandttype" minOccurs="0"/>
+							<xsd:element name="Bestandsnm" type="str:Omschrijving70" minOccurs="0"/>
+							<xsd:element name="AdresseringCd" type="str:Adressering" minOccurs="0"/>
+							<xsd:element name="Datastring" type="str:Datastring"/>
+							<xsd:element name="Wrknmr">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SofiNr" type="str:Sofinummer" minOccurs="0"/>
+										<xsd:element name="Gebdat" type="xsd:date" minOccurs="0"/>
+										<xsd:element name="Achternaam" type="str:Achternaam" minOccurs="0"/>
+										<xsd:element name="Voorl" type="str:Voorletters" minOccurs="0"/>
+										<xsd:element name="Roepnaam" type="str:Roepnaam" minOccurs="0"/>
+										<xsd:element name="GslchtCd" type="str:Geslacht" minOccurs="0"/>
+										<xsd:element name="IdWrknmr" type="str:IdentificatieWerknemer"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Dnstvbnd" minOccurs="0" maxOccurs="9">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="IdDnstvbnd" type="str:IdentificatieDienstverband" minOccurs="0"/>
+										<xsd:element name="Ingdat" type="xsd:date" minOccurs="0"/>
+										<xsd:element name="PersNr" type="str:Sleutelwaarde35" minOccurs="0"/>
+										<xsd:element name="PrevDienst" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="IdPrevDienst" type="str:IdentificatieDienstverlening"/>
+													<xsd:element name="PreventDienst" type="str:PreventieveDienst"/>
+													<xsd:element name="PevDienstToev" type="str:Tekst70" minOccurs="0"/>
+													<xsd:element name="DatTotPrevD" type="xsd:date" minOccurs="0"/>
+													<xsd:element name="VerbPrevDCode" type="str:CodeKeuring" minOccurs="0"/>
+													<xsd:element name="VerbPrevDOms" type="str:Tekst70" minOccurs="0"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="Vrzm" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="VrzmgvlId" type="str:IdentificatieVerzuim" minOccurs="0"/>
+													<xsd:element name="DatEerstVrzmdg" type="xsd:date"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Afspraak" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="IdAfspraak" type="str:IdentificatieAfspraak" minOccurs="0"/>
+										<xsd:element name="DatAfspraak" type="xsd:date"/>
+										<xsd:element name="TijdAfspraak" type="xsd:time" minOccurs="0"/>
+										<xsd:element name="DuurAfspraak" type="str:DuurInUren" minOccurs="0"/>
+										<xsd:element name="StatusAfspraakCd" type="str:StatusAfspraak" minOccurs="0"/>
+										<xsd:element name="OmsSrtAfspraak" type="str:Omschrijving70" minOccurs="0"/>
+										<xsd:element name="UitvoerderAfspraak" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Achternaam" type="str:Achternaam"/>
+													<xsd:element name="Voorl" type="str:Voorletters" minOccurs="0"/>
+													<xsd:element name="Roepnaam" type="str:Roepnaam" minOccurs="0"/>
+													<xsd:element name="GslchtCd" type="str:Geslacht" minOccurs="0"/>
+													<xsd:element name="NmFnct" type="str:Tekst35"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="AansluitnummerGegevensuitwisseling">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Achternaam">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Adressering">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Berichtreferentienummer">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Bestandttype">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="13"/>
+			<xsd:enumeration value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CodeKeuring">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Datastring">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DuurInUren">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="5"/>
+			<xsd:fractionDigits value="2"/>
+			<xsd:minInclusive value="0"/>
+			<xsd:pattern value="[0-9]{1,3}[.][0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Geslacht">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="V"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HandelsnaamOrganisatie">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieAfspraak">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieDienstverband">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieDienstverlening">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieDocument">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieInzender">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieOntvanger">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieVerzuim">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieWerkgever">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieWerknemer">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Loonheffingnummer">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Nummer">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NummerAdresCommunicatie">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Omschrijving70">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PreventieveDienst">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="13"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="15"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="17"/>
+			<xsd:enumeration value="18"/>
+			<xsd:enumeration value="50"/>
+			<xsd:enumeration value="51"/>
+			<xsd:enumeration value="52"/>
+			<xsd:enumeration value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Prioriteit">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RedenAanleveringDocument">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Roepnaam">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+			<xsd:pattern value="\D*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Sleutelwaarde35">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Sofinummer">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StatusAfspraak">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StatusDocument">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Tekst35">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Tekst70">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VestigingsnummerHandelsregister">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Voorletters">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+			<xsd:pattern value="\D*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

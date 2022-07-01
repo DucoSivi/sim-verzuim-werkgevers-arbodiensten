@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Retourmelding1/2022" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Retourmelding1/2022" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2022.0">
+	<xsd:element name="Retourmelding1">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="BrAlg">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="BrCd">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="5"/>
+										<xsd:enumeration value="99999"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="VnrBrCd">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:maxLength value="5"/>
+										<xsd:enumeration value="00002"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="AandatBr" type="xsd:date"/>
+							<xsd:element name="AantijdBr" type="xsd:time"/>
+							<xsd:element name="IdInzndr" type="str:IdentificatieInzender"/>
+							<xsd:element name="GebrSwPakket" type="str:Tekst35"/>
+							<xsd:element name="IdOntvngr" type="str:IdentificatieOntvanger"/>
+							<xsd:element name="Berrefnr" type="str:Berichtreferentienummer"/>
+							<xsd:element name="BerrefnrIngzndnBer" type="str:Berichtreferentienummer"/>
+							<xsd:element name="TestJN">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="1"/>
+										<xsd:pattern value="\D*"/>
+										<xsd:enumeration value="J"/>
+										<xsd:enumeration value="N"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="OntvngstbevJN">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:length value="1"/>
+										<xsd:pattern value="\D*"/>
+										<xsd:enumeration value="J"/>
+										<xsd:enumeration value="N"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="SrtRetmldngCd" type="str:SoortRetourmelding"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Foutmldng" minOccurs="0" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="SrtFoutCd" type="str:SoortFoutCode"/>
+							<xsd:element name="Toelchtng" type="str:Toelichting" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="Berichtreferentienummer">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieInzender">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieOntvanger">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SoortFoutCode">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SoortRetourmelding">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Tekst35">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Toelichting">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
