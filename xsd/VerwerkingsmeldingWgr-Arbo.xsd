@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/VerwerkingsmeldingWerkgeverArbodienst/2024" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/VerwerkingsmeldingWerkgeverArbodienst/2024" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2024.0">
+	<xsd:element name="VerwerkingsmeldingWerkgeverArbodienst">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="BrAlg">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="BrCd" type="str:BerichtCode_nocodes"/>
+							<xsd:element name="VnrBrCd" type="str:VersienummerBericht_nocodes"/>
+							<xsd:element name="AandatBr" type="xsd:date"/>
+							<xsd:element name="AantijdBr" type="xsd:time"/>
+							<xsd:element name="IdInzndr" type="str:IdentificatieInzender"/>
+							<xsd:element name="GebrSwPakket" type="str:Tekst35"/>
+							<xsd:element name="IdOntvngr" type="str:IdentificatieOntvanger"/>
+							<xsd:element name="Berrefnr" type="str:Berichtreferentienummer"/>
+							<xsd:element name="BerrefnrIngzndnBer" type="str:Berichtreferentienummer"/>
+							<xsd:element name="TestJN" type="str:LogischeEenheid_nocodes"/>
+							<xsd:element name="OntvngstbevJN" type="str:LogischeEenheid_nocodes"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="VrwrkMld" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="VrwrkbhdCd" type="str:Verwerkbaarheid"/>
+							<xsd:element name="VrzmgvlId" type="str:IdentificatieVerzuim"/>
+							<xsd:element name="VrzmgvlVnrMld" type="str:Aantal3"/>
+							<xsd:element name="AansltnrGeguitwlngArbdnst" type="str:AansluitnummerGegevensuitwisseling"/>
+							<xsd:element name="IdWrkgvrArbdnst" type="str:IdentificatieWerkgever"/>
+							<xsd:element name="CtrlCd" type="str:SiviMeldingscodes"/>
+							<xsd:element name="MldngTkst" type="str:VrijeTekst"/>
+							<xsd:element name="VrTkst" minOccurs="0">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="VrijeTekst" type="str:VrijeTekst"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="AansluitnummerGegevensuitwisseling">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="70"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Aantal3">
+		<xsd:restriction base="xsd:nonNegativeInteger">
+			<xsd:totalDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BerichtCode_nocodes">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Berichtreferentienummer">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieInzender">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieOntvanger">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieVerzuim">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="IdentificatieWerkgever">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LogischeEenheid_nocodes">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+			<xsd:pattern value="\D*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SiviMeldingscodes">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Tekst35">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="35"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VersienummerBericht_nocodes">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Verwerkbaarheid">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VrijeTekst">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
