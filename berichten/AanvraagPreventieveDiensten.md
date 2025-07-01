@@ -1,12 +1,12 @@
 # Aanvraag preventieve diensten
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2024.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
 
 | | |
 |---|---|
 | Schema | [`xsd/AanvraagPreventieveDiensten.xsd`](../xsd/AanvraagPreventieveDiensten.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/AanvraagPreventieveDiensten/2024` |
-| Versie | 2024.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/AanvraagPreventieveDiensten/2025` |
+| Versie | 2025.0 |
 | Elementen | 131 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.

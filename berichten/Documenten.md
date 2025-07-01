@@ -1,12 +1,12 @@
 # Documenten
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2024.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
 
 | | |
 |---|---|
 | Schema | [`xsd/Documenten.xsd`](../xsd/Documenten.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/Documenten/2024` |
-| Versie | 2024.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/Documenten/2025` |
+| Versie | 2025.0 |
 | Elementen | 83 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.

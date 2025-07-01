@@ -1,4 +1,4 @@
-# Berichten Werkgevers ↔ Arbodiensten 2024
+# Berichten Werkgevers ↔ Arbodiensten 2025
 
 | Bericht | Schema | Elementen |
 |---|---|---|
@@ -9,6 +9,6 @@
 | [Medische kaart](MedischeKaart.md) | [`MedischeKaart.xsd`](../xsd/MedischeKaart.xsd) | 62 |
 | [Retourmelding](Retourmelding1.md) | [`Retourmelding1.xsd`](../xsd/Retourmelding1.xsd) | 17 |
 | [Verwerkingsmelding werkgever - arbodienst](VerwerkingsmeldingWgr-Arbo.md) | [`VerwerkingsmeldingWgr-Arbo.xsd`](../xsd/VerwerkingsmeldingWgr-Arbo.xsd) | 23 |
-| [Verzuimmeldingen](Verzuimmeldingen.md) | [`Verzuimmeldingen.xsd`](../xsd/Verzuimmeldingen.xsd) | 185 |
+| [Verzuimmeldingen](Verzuimmeldingen.md) | [`Verzuimmeldingen.xsd`](../xsd/Verzuimmeldingen.xsd) | 168 |
 | [WerkgeversGegevensBasisregistratie](WerkgeversGegevensBasisregistratie.md) | [`WerkgeversGegevensBasisregistratie.xsd`](../xsd/WerkgeversGegevensBasisregistratie.xsd) | 159 |
-| [WerknemersGegevens](WerknemersGegevens.md) | [`WerknemersGegevens.xsd`](../xsd/WerknemersGegevens.xsd) | 141 |
+| [WerknemersGegevens](WerknemersGegevens.md) | [`WerknemersGegevens.xsd`](../xsd/WerknemersGegevens.xsd) | 138 |

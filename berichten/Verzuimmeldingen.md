@@ -1,13 +1,13 @@
 # Verzuimmeldingen
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2024.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
 
 | | |
 |---|---|
 | Schema | [`xsd/Verzuimmeldingen.xsd`](../xsd/Verzuimmeldingen.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2024` |
-| Versie | 2024.0 |
-| Elementen | 185 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2025` |
+| Versie | 2025.0 |
+| Elementen | 168 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.
 
@@ -18,7 +18,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | **`Verzuimmeldingen`** |  | 1..1 | groep |  |
 | &emsp;**`BrAlg`** | Bericht algemeen | 1..1 | groep |  |
 | &emsp;&emsp;`BrCd` | Bericht, code | 1..1 | an..5 | 00100 |
-| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00011 |
+| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00012 |
 | &emsp;&emsp;`AandatBr` | Aanmaakdatum bericht | 1..1 | datum |  |
 | &emsp;&emsp;`AantijdBr` | Aanmaaktijd bericht | 1..1 | tijd |  |
 | &emsp;&emsp;`IdInzndr` | Identificatie inzender | 1..1 | an..40 |  |
@@ -57,7 +57,6 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`SrtComCd` | Soort communicatie, code | 1..1 | an2 | 06, 08, 10 |
 | &emsp;&emsp;&emsp;&emsp;`NrCom` | Nummer/adres communicatie | 1..1 | an..512 |  |
 | &emsp;&emsp;**`Wrknmr`** | Werknemer | 1..* | groep |  |
-| &emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;`SofiNr` | Burgerservicenummer | 0..1 | n..9 |  |
 | &emsp;&emsp;&emsp;`Gebdat` | Geboortedatum | 1..1 | datum |  |
 | &emsp;&emsp;&emsp;`Overldat` | Overlijdensdatum | 0..1 | datum |  |
@@ -71,10 +70,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;`GslchtCd` | Geslachtsaanduiding, code | 1..1 | an1 | M, O, V |
 | &emsp;&emsp;&emsp;`NivOpldngCd` | Niveau opleiding, code | 0..1 | an2 | 01, 02, 03, 04, 05, 06, 07, 99 |
 | &emsp;&emsp;&emsp;`IdWrknmr` | Identificatie Werknemer | 1..1 | an..40 |  |
-| &emsp;&emsp;&emsp;`IdWrknmrOud` | Identificatie werknemer oud | 0..1 | an..40 |  |
-| &emsp;&emsp;&emsp;**`BnkGiro`** | Bankrekening | 0..1 | groep |  |
-| &emsp;&emsp;&emsp;&emsp;`Iban` | Iban | 0..1 | an..34 |  |
-| &emsp;&emsp;&emsp;&emsp;`Bic` | Bic | 0..1 | an..11 |  |
+| &emsp;&emsp;&emsp;`WrknmrNoriskJN` | Valt werknemer onder no-risk polis J/N | 0..1 | an1 | J, N |
 | &emsp;&emsp;&emsp;**`Prtnr`** | Partner | 0..1 | groep |  |
 | &emsp;&emsp;&emsp;&emsp;`SignNm` | Significant deel van de achternaam | 1..1 | an..200 |  |
 | &emsp;&emsp;&emsp;&emsp;`Voorv` | Voorvoegsels | 0..1 | an..10 |  |
@@ -82,9 +78,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`SrtAdrsCd` | Soort adres, code | 1..1 | an2 | 01, 06 |
 | &emsp;&emsp;&emsp;&emsp;`SrtVrplgadrsCd` | Soort verpleegadres, code | 0..1 | an2 | 01, 02, 03, 99 |
 | &emsp;&emsp;&emsp;&emsp;`NmVrpladrs` | Naam verpleegadres | 0..1 | an..70 |  |
-| &emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 0..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;`Pc` | Copyright SIVI | 1..1 | an6 |  |
+| &emsp;&emsp;&emsp;&emsp;`Pc` | Postcode | 1..1 | an6 |  |
 | &emsp;&emsp;&emsp;&emsp;`Wnpl` | Woonplaatsnaam | 1..1 | an..24 |  |
 | &emsp;&emsp;&emsp;&emsp;`StraatLang` | Straatnaam_ | 0..1 | an..80 |  |
 | &emsp;&emsp;&emsp;&emsp;`Huisnr` | Huisnummer | 1..1 | n..5 |  |
@@ -93,8 +87,6 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`SrtAdrsCd` | Soort adres, code | 1..1 | an2 | 01, 06 |
 | &emsp;&emsp;&emsp;&emsp;`SrtVrplgadrsCd` | Soort verpleegadres, code | 0..1 | an2 | 01, 02, 03, 99 |
 | &emsp;&emsp;&emsp;&emsp;`NmVrpladrs` | Naam verpleegadres | 0..1 | an..70 |  |
-| &emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 0..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`LocomsBtl` | Locatieomschrijving buitenland | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;`PcBtl` | Postcode buitenland | 0..1 | an..9 |  |
 | &emsp;&emsp;&emsp;&emsp;`WnplBtl` | Woonplaatsnaam buitenland | 1..1 | an..24 |  |
@@ -107,14 +99,11 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`SrtComCd` | Soort communicatie, code | 1..1 | an2 | 05, 06, 07, 08, 09, 10 |
 | &emsp;&emsp;&emsp;&emsp;`NrCom` | Nummer/adres communicatie | 1..1 | an..512 |  |
 | &emsp;&emsp;&emsp;**`Dnstvbnd`** | Dienstverband | 1..99 | groep |  |
-| &emsp;&emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`IdDnstvbnd` | Identificatie dienstverband | 1..1 | an..40 |  |
-| &emsp;&emsp;&emsp;&emsp;`IdDnstvbndOud` | Identificatie dienstverband oud | 0..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 1..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`RdEndDnstvbndCd` | Reden einde dienstverband, code | 0..1 | an2 | 01, 03, 05, 06, 08, 09, 10, 99 |
-| &emsp;&emsp;&emsp;&emsp;`PersNr` | Copyright SIVI | 0..1 | an..35 |  |
-| &emsp;&emsp;&emsp;&emsp;`PersNrOud` | Personeelsnummer oud | 0..1 | an..35 |  |
+| &emsp;&emsp;&emsp;&emsp;`PersNr` | Personeelsnummer | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;`CntrnrArbdnst` | Contractnummer bij Arbo-dienst | 0..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;`SrtDnstvbndCd` | Soort dienstverband, code | 0..1 | an2 | 04, 05, 07, 20, 21, 22, 23, 24 |
 | &emsp;&emsp;&emsp;&emsp;`Fnctcd` | Functiecode | 0..1 | an..15 |  |
@@ -135,17 +124,11 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`PrcLndrbtng` | Percentage loondoorbetaling | 0..1 | n..6,2 |  |
 | &emsp;&emsp;&emsp;&emsp;**`Arbeidsrelatie`** | Arbeidsrelatie | 0..1 | groep |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`IdArbeidsrelatie` | Identificatie arbeidsrelatie | 1..1 | an..40 |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`IdArbeidsrelatieOud` | Identificatie arbeidsrelatie oud | 0..1 | an..40 |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`PersNr` | Copyright SIVI | 0..1 | an..35 |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`PersNrOud` | Personeelsnummer oud | 0..1 | an..35 |  |
+| &emsp;&emsp;&emsp;&emsp;&emsp;`PersNr` | Personeelsnummer | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 1..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`AantCtrcturenPWk` | Aantal contracturen per week | 1..1 | n..5,2 |  |
 | &emsp;&emsp;&emsp;&emsp;**`Kostenplaats`** | Kostenplaats | 0..9 | groep |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 0..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`NmKostenplaats` | Naam kostenplaats | 1..1 | an..70 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`KostenplaatsCd` | Kostenplaats, code | 1..1 | an..70 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`OndKostenplaatsCd` | Onderdeel van kostenplaats, code | 0..1 | an..70 |  |

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2024" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2024" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2024.0">
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2025" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Verzuimmeldingen/2025" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2025.0">
 	<xsd:element name="Verzuimmeldingen">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -18,7 +18,7 @@
 								<xsd:simpleType>
 									<xsd:restriction base="xsd:string">
 										<xsd:maxLength value="5"/>
-										<xsd:enumeration value="00011"/>
+										<xsd:enumeration value="00012"/>
 									</xsd:restriction>
 								</xsd:simpleType>
 							</xsd:element>
@@ -141,7 +141,6 @@
 							<xsd:element name="Wrknmr" maxOccurs="unbounded">
 								<xsd:complexType>
 									<xsd:sequence>
-										<xsd:element name="IngdatMut" type="xsd:date" minOccurs="0"/>
 										<xsd:element name="SofiNr" type="str:Sofinummer" minOccurs="0"/>
 										<xsd:element name="Gebdat" type="xsd:date"/>
 										<xsd:element name="Overldat" type="xsd:date" minOccurs="0"/>
@@ -165,14 +164,15 @@
 										<xsd:element name="GslchtCd" type="str:Geslacht"/>
 										<xsd:element name="NivOpldngCd" type="str:NiveauOpleiding" minOccurs="0"/>
 										<xsd:element name="IdWrknmr" type="str:IdentificatieWerknemer"/>
-										<xsd:element name="IdWrknmrOud" type="str:IdentificatieWerknemer" minOccurs="0"/>
-										<xsd:element name="BnkGiro" minOccurs="0">
-											<xsd:complexType>
-												<xsd:sequence>
-													<xsd:element name="Iban" type="str:IbanRekeningnummer" minOccurs="0"/>
-													<xsd:element name="Bic" type="str:Bic" minOccurs="0"/>
-												</xsd:sequence>
-											</xsd:complexType>
+										<xsd:element name="WrknmrNoriskJN" minOccurs="0">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:length value="1"/>
+													<xsd:pattern value="\D*"/>
+													<xsd:enumeration value="J"/>
+													<xsd:enumeration value="N"/>
+												</xsd:restriction>
+											</xsd:simpleType>
 										</xsd:element>
 										<xsd:element name="Prtnr" minOccurs="0">
 											<xsd:complexType>
@@ -196,8 +196,6 @@
 													</xsd:element>
 													<xsd:element name="SrtVrplgadrsCd" type="str:SoortVerpleegadres" minOccurs="0"/>
 													<xsd:element name="NmVrpladrs" type="str:Tekst70" minOccurs="0"/>
-													<xsd:element name="Ingdat" type="xsd:date" minOccurs="0"/>
-													<xsd:element name="Enddat" type="xsd:date" minOccurs="0"/>
 													<xsd:element name="Pc" type="str:PostcodeNederland"/>
 													<xsd:element name="Wnpl" type="str:Plaatsnaam"/>
 													<xsd:element name="StraatLang" type="str:StraatnaamLang" minOccurs="0"/>
@@ -220,8 +218,6 @@
 													</xsd:element>
 													<xsd:element name="SrtVrplgadrsCd" type="str:SoortVerpleegadres" minOccurs="0"/>
 													<xsd:element name="NmVrpladrs" type="str:Tekst70" minOccurs="0"/>
-													<xsd:element name="Ingdat" type="xsd:date" minOccurs="0"/>
-													<xsd:element name="Enddat" type="xsd:date" minOccurs="0"/>
 													<xsd:element name="LocomsBtl" type="str:Locatieomschrijving" minOccurs="0"/>
 													<xsd:element name="PcBtl" type="str:PostcodeBuitenland" minOccurs="0"/>
 													<xsd:element name="WnplBtl" type="str:Plaatsnaam"/>
@@ -256,9 +252,7 @@
 										<xsd:element name="Dnstvbnd" maxOccurs="99">
 											<xsd:complexType>
 												<xsd:sequence>
-													<xsd:element name="IngdatMut" type="xsd:date" minOccurs="0"/>
 													<xsd:element name="IdDnstvbnd" type="str:IdentificatieDienstverband"/>
-													<xsd:element name="IdDnstvbndOud" type="str:IdentificatieDienstverband" minOccurs="0"/>
 													<xsd:element name="Ingdat" type="xsd:date"/>
 													<xsd:element name="Enddat" type="xsd:date" minOccurs="0"/>
 													<xsd:element name="RdEndDnstvbndCd" minOccurs="0">
@@ -277,7 +271,6 @@
 														</xsd:simpleType>
 													</xsd:element>
 													<xsd:element name="PersNr" type="str:Sleutelwaarde35" minOccurs="0"/>
-													<xsd:element name="PersNrOud" type="str:Sleutelwaarde35" minOccurs="0"/>
 													<xsd:element name="CntrnrArbdnst" type="str:IdentificatieContract" minOccurs="0"/>
 													<xsd:element name="SrtDnstvbndCd" minOccurs="0">
 														<xsd:simpleType>
@@ -332,11 +325,8 @@
 														<xsd:complexType>
 															<xsd:sequence>
 																<xsd:element name="IdArbeidsrelatie" type="str:IdentificatieArbeidsrelatie"/>
-																<xsd:element name="IdArbeidsrelatieOud" type="str:IdentificatieArbeidsrelatie" minOccurs="0"/>
 																<xsd:element name="PersNr" type="str:Sleutelwaarde35" minOccurs="0"/>
-																<xsd:element name="PersNrOud" type="str:Sleutelwaarde35" minOccurs="0"/>
 																<xsd:element name="Ingdat" type="xsd:date"/>
-																<xsd:element name="IngdatMut" type="xsd:date" minOccurs="0"/>
 																<xsd:element name="Enddat" type="xsd:date" minOccurs="0"/>
 																<xsd:element name="AantCtrcturenPWk" type="str:Aantal52"/>
 															</xsd:sequence>
@@ -345,9 +335,6 @@
 													<xsd:element name="Kostenplaats" minOccurs="0" maxOccurs="9">
 														<xsd:complexType>
 															<xsd:sequence>
-																<xsd:element name="Ingdat" type="xsd:date" minOccurs="0"/>
-																<xsd:element name="IngdatMut" type="xsd:date" minOccurs="0"/>
-																<xsd:element name="Enddat" type="xsd:date" minOccurs="0"/>
 																<xsd:element name="NmKostenplaats" type="str:NaamKostenplaats"/>
 																<xsd:element name="KostenplaatsCd" type="str:KostenplaatsCode"/>
 																<xsd:element name="OndKostenplaatsCd" type="str:KostenplaatsCode" minOccurs="0"/>
@@ -563,11 +550,6 @@
 			<xsd:maxLength value="512"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="Bic">
-		<xsd:restriction base="xsd:string">
-			<xsd:maxLength value="11"/>
-		</xsd:restriction>
-	</xsd:simpleType>
 	<xsd:simpleType name="BijzondereRedenStartVerzuim">
 		<xsd:restriction base="xsd:string">
 			<xsd:length value="2"/>
@@ -615,11 +597,6 @@
 	<xsd:simpleType name="HuisnummerToevoeging">
 		<xsd:restriction base="xsd:string">
 			<xsd:maxLength value="4"/>
-		</xsd:restriction>
-	</xsd:simpleType>
-	<xsd:simpleType name="IbanRekeningnummer">
-		<xsd:restriction base="xsd:string">
-			<xsd:maxLength value="34"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="IdentificatieArbeidsrelatie">

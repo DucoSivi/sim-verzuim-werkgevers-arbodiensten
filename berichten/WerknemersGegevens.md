@@ -1,13 +1,13 @@
 # WerknemersGegevens
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2024.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
 
 | | |
 |---|---|
 | Schema | [`xsd/WerknemersGegevens.xsd`](../xsd/WerknemersGegevens.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2024` |
-| Versie | 2024.0 |
-| Elementen | 141 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2025` |
+| Versie | 2025.0 |
+| Elementen | 138 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.
 
@@ -18,7 +18,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | **`WerknemerGegevens`** |  | 1..1 | groep |  |
 | &emsp;**`BrAlg`** | Bericht algemeen | 1..1 | groep |  |
 | &emsp;&emsp;`BrCd` | Bericht, code | 1..1 | an..5 | 00600 |
-| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00005 |
+| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00006 |
 | &emsp;&emsp;`AandatBr` | Aanmaakdatum bericht | 1..1 | datum |  |
 | &emsp;&emsp;`AantijdBr` | Aanmaaktijd bericht | 1..1 | tijd |  |
 | &emsp;&emsp;`IdInzndr` | Identificatie inzender | 1..1 | an..40 |  |
@@ -70,9 +70,6 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;`NivOpldngCd` | Niveau opleiding, code | 0..1 | an2 | 01, 02, 03, 04, 05, 06, 07, 99 |
 | &emsp;&emsp;&emsp;`IdWrknmr` | Identificatie Werknemer | 1..1 | an..40 |  |
 | &emsp;&emsp;&emsp;`IdWrknmrOud` | Identificatie werknemer oud | 0..1 | an..40 |  |
-| &emsp;&emsp;&emsp;**`BnkGiro`** | Bankrekening | 0..1 | groep |  |
-| &emsp;&emsp;&emsp;&emsp;`Iban` | Iban | 0..1 | an..34 |  |
-| &emsp;&emsp;&emsp;&emsp;`Bic` | Bic | 0..1 | an..11 |  |
 | &emsp;&emsp;&emsp;**`Prtnr`** | Partner | 0..1 | groep |  |
 | &emsp;&emsp;&emsp;&emsp;`SignNm` | Significant deel van de achternaam | 1..1 | an..200 |  |
 | &emsp;&emsp;&emsp;&emsp;`Voorv` | Voorvoegsels | 0..1 | an..10 |  |
@@ -107,7 +104,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 1..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`Enddat` | Einddatum | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`RdEndDnstvbndCd` | Reden einde dienstverband, code | 0..1 | an2 | 01, 03, 05, 06, 08, 09, 10, 99 |
-| &emsp;&emsp;&emsp;&emsp;`PersNr` | Personeelsnummer | 0..1 | an..35 |  |
+| &emsp;&emsp;&emsp;&emsp;`PersNr` | Copyright SIVI | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;`PersNrOud` | Personeelsnummer oud | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;`CntrnrArbdnst` | Contractnummer bij Arbo-dienst | 0..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;`SrtDnstvbndCd` | Soort dienstverband, code | 0..1 | an2 | 04, 05, 07, 20, 21, 22, 23, 24 |
@@ -130,7 +127,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;**`Arbeidsrelatie`** | Arbeidsrelatie | 0..1 | groep |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`IdArbeidsrelatie` | Identificatie arbeidsrelatie | 1..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`IdArbeidsrelatieOud` | Identificatie arbeidsrelatie oud | 0..1 | an..40 |  |
-| &emsp;&emsp;&emsp;&emsp;&emsp;`PersNr` | Personeelsnummer | 0..1 | an..35 |  |
+| &emsp;&emsp;&emsp;&emsp;&emsp;`PersNr` | Copyright SIVI | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`PersNrOud` | Personeelsnummer oud | 0..1 | an..35 |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`Ingdat` | Ingangsdatum | 1..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
