@@ -1,9 +1,9 @@
-# Berichten Werkgevers ↔ Arbodiensten 2025
+# Berichten Werkgevers ↔ Arbodiensten 2026
 
 | Bericht | Schema | Elementen |
 |---|---|---|
 | [Aanvraag preventieve diensten](AanvraagPreventieveDiensten.md) | [`AanvraagPreventieveDiensten.xsd`](../xsd/AanvraagPreventieveDiensten.xsd) | 131 |
-| [Afspraken](Afspraken.md) | [`Afspraken.xsd`](../xsd/Afspraken.xsd) | 65 |
+| [Afspraken](Afspraken.md) | [`Afspraken.xsd`](../xsd/Afspraken.xsd) | 66 |
 | [Dienstverbanden](Dienstverbanden.md) | [`Dienstverbanden.xsd`](../xsd/Dienstverbanden.xsd) | 103 |
 | [Documenten](Documenten.md) | [`Documenten.xsd`](../xsd/Documenten.xsd) | 83 |
 | [Medische kaart](MedischeKaart.md) | [`MedischeKaart.xsd`](../xsd/MedischeKaart.xsd) | 62 |

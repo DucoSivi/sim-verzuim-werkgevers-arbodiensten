@@ -1,12 +1,12 @@
 # Verwerkingsmelding werkgever - arbodienst
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2026.
 
 | | |
 |---|---|
 | Schema | [`xsd/VerwerkingsmeldingWgr-Arbo.xsd`](../xsd/VerwerkingsmeldingWgr-Arbo.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/VerwerkingsmeldingWerkgeverArbodienst/2025` |
-| Versie | 2025.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/VerwerkingsmeldingWerkgeverArbodienst/2026` |
+| Versie | 2026.0 |
 | Elementen | 23 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.

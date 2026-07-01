@@ -1,12 +1,12 @@
 # Documenten
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2026.
 
 | | |
 |---|---|
 | Schema | [`xsd/Documenten.xsd`](../xsd/Documenten.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/Documenten/2025` |
-| Versie | 2025.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/Documenten/2026` |
+| Versie | 2026.0 |
 | Elementen | 83 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.
@@ -18,7 +18,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | **`Documenten`** |  | 1..1 | groep |  |
 | &emsp;**`BrAlg`** | Bericht algemeen | 1..1 | groep |  |
 | &emsp;&emsp;`BrCd` | Bericht, code | 1..1 | an..5 | 00500 |
-| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00005 |
+| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00006 |
 | &emsp;&emsp;`AandatBr` | Aanmaakdatum bericht | 1..1 | datum |  |
 | &emsp;&emsp;`AantijdBr` | Aanmaaktijd bericht | 1..1 | tijd |  |
 | &emsp;&emsp;`IdInzndr` | Identificatie inzender | 1..1 | an..40 |  |
@@ -53,10 +53,10 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;`IdDocument` | Identificatie document | 1..1 | an..40 |  |
 | &emsp;&emsp;`IdDocumentOud` | Identificatie document oud | 0..1 | an..40 |  |
 | &emsp;&emsp;`DatDocument` | Datum document | 1..1 | datum |  |
-| &emsp;&emsp;`SrtDocumentCd` | Soort document, code | 1..1 | an3 | 23 waarden, o.a. 100, 104, 158, 208, 215 … |
+| &emsp;&emsp;`SrtDocumentCd` | Soort document, code | 1..1 | an3 | 24 waarden, o.a. 100, 104, 111, 158, 208 … |
 | &emsp;&emsp;`SrtDocumentOms` | Soort document, omschrijving | 0..1 | an..70 |  |
 | &emsp;&emsp;`StatDocumentCd` | Status document, code | 0..1 | an2 | 01, 02 |
-| &emsp;&emsp;`KenmerkZendPartij` | Copyright SIVI | 1..1 | an..512 |  |
+| &emsp;&emsp;`KenmerkZendPartij` | Kenmerk zendende partij | 1..1 | an..512 |  |
 | &emsp;&emsp;`RdAanlevDocumentCd` | Reden aanlevering document, code | 0..1 | an2 | 01, 02, 03 |
 | &emsp;&emsp;`PrioriteitCd` | Prioriteit, code | 0..1 | an2 | 01, 02, 03 |
 | &emsp;&emsp;`BestandTypCd` | Bestand type, code | 0..1 | an2 | 14 waarden, o.a. 01, 02, 03, 04, 05 … |
@@ -86,7 +86,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;&emsp;`VrzmgvlId` | Verzuimgeval identificatie | 0..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;`DatEerstVrzmdg` | Datum eerste verzuimdag | 1..1 | datum |  |
 | &emsp;&emsp;**`Afspraak`** | Afspraak | 0..1 | groep |  |
-| &emsp;&emsp;&emsp;`IdAfspraak` | Identificatie  afspraak | 0..1 | an..40 |  |
+| &emsp;&emsp;&emsp;`IdAfspraak` | Identificatie  afspraak | 1..1 | an..40 |  |
 | &emsp;&emsp;&emsp;`DatAfspraak` | Datum afspraak | 1..1 | datum |  |
 | &emsp;&emsp;&emsp;`TijdAfspraak` | Tijdstip afspraak | 0..1 | tijd |  |
 | &emsp;&emsp;&emsp;`DuurAfspraak` | Duur afspraak | 0..1 | n..5,2 |  |

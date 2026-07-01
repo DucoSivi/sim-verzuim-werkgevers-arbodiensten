@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Afspraken/2025" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Afspraken/2025" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2025.0">
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Afspraken/2026" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Afspraken/2026" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2026.0">
 	<xsd:element name="Afspraken">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -18,7 +18,7 @@
 								<xsd:simpleType>
 									<xsd:restriction base="xsd:string">
 										<xsd:maxLength value="5"/>
-										<xsd:enumeration value="00005"/>
+										<xsd:enumeration value="00006"/>
 									</xsd:restriction>
 								</xsd:simpleType>
 							</xsd:element>
@@ -51,7 +51,7 @@
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="Werkgever" minOccurs="0">
+				<xsd:element name="Wrkgvr" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="HndlsnmOrg" type="str:HandelsnaamOrganisatie"/>
@@ -62,12 +62,12 @@
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="Arbodienst" minOccurs="0">
+				<xsd:element name="Arbdnst" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="HndlsnmOrg" type="str:HandelsnaamOrganisatie"/>
 							<xsd:element name="IdArbdnst" type="str:IdentificatieArboDienst" minOccurs="0"/>
-							<xsd:element name="Contactpersoon" minOccurs="0">
+							<xsd:element name="Cntprsn" minOccurs="0">
 								<xsd:complexType>
 									<xsd:sequence>
 										<xsd:element name="Achternaam" type="str:Achternaam"/>
@@ -82,7 +82,7 @@
 												</xsd:restriction>
 											</xsd:simpleType>
 										</xsd:element>
-										<xsd:element name="Communicatie" minOccurs="0" maxOccurs="9">
+										<xsd:element name="Com" minOccurs="0" maxOccurs="9">
 											<xsd:complexType>
 												<xsd:sequence>
 													<xsd:element name="SrtComCd">
@@ -116,6 +116,7 @@
 							<xsd:element name="TijdAfspraakOud" type="xsd:time" minOccurs="0"/>
 							<xsd:element name="DuurAfspraak" type="str:DuurInUren" minOccurs="0"/>
 							<xsd:element name="StatusAfspraakCd" type="str:StatusAfspraak" minOccurs="0"/>
+							<xsd:element name="VormAfspraakCd" type="str:Code2" minOccurs="0"/>
 							<xsd:element name="OmsSrtAfspraak" type="str:Omschrijving70"/>
 							<xsd:element name="Wrknmr">
 								<xsd:complexType>
@@ -131,7 +132,7 @@
 									</xsd:sequence>
 								</xsd:complexType>
 							</xsd:element>
-							<xsd:element name="StraatadresNederland" minOccurs="0">
+							<xsd:element name="StrAdrNl" minOccurs="0">
 								<xsd:complexType>
 									<xsd:sequence>
 										<xsd:element name="Pc" type="str:PostcodeNederland"/>
@@ -153,12 +154,12 @@
 									</xsd:sequence>
 								</xsd:complexType>
 							</xsd:element>
-							<xsd:element name="Dienstverband" minOccurs="0" maxOccurs="9">
+							<xsd:element name="Dnstvbnd" minOccurs="0" maxOccurs="9">
 								<xsd:complexType>
 									<xsd:sequence>
 										<xsd:element name="IdDnstvbnd" type="str:IdentificatieDienstverband" minOccurs="0"/>
 										<xsd:element name="PersNr" type="str:Sleutelwaarde35" minOccurs="0"/>
-										<xsd:element name="Verzuim" minOccurs="0">
+										<xsd:element name="Vrzm" minOccurs="0">
 											<xsd:complexType>
 												<xsd:sequence>
 													<xsd:element name="DatEerstVrzmdg" type="xsd:date"/>
@@ -187,6 +188,14 @@
 	<xsd:simpleType name="Berichtreferentienummer">
 		<xsd:restriction base="xsd:string">
 			<xsd:maxLength value="512"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Code2">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="DuurInUren">

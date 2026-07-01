@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Documenten/2025" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Documenten/2025" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2025.0">
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/Documenten/2026" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/Documenten/2026" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2026.0">
 	<xsd:element name="Documenten">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -18,7 +18,7 @@
 								<xsd:simpleType>
 									<xsd:restriction base="xsd:string">
 										<xsd:maxLength value="5"/>
-										<xsd:enumeration value="00005"/>
+										<xsd:enumeration value="00006"/>
 									</xsd:restriction>
 								</xsd:simpleType>
 							</xsd:element>
@@ -128,6 +128,7 @@
 										<xsd:length value="3"/>
 										<xsd:enumeration value="100"/>
 										<xsd:enumeration value="104"/>
+										<xsd:enumeration value="111"/>
 										<xsd:enumeration value="158"/>
 										<xsd:enumeration value="208"/>
 										<xsd:enumeration value="215"/>
@@ -206,7 +207,7 @@
 							<xsd:element name="Afspraak" minOccurs="0">
 								<xsd:complexType>
 									<xsd:sequence>
-										<xsd:element name="IdAfspraak" type="str:IdentificatieAfspraak" minOccurs="0"/>
+										<xsd:element name="IdAfspraak" type="str:IdentificatieAfspraak"/>
 										<xsd:element name="DatAfspraak" type="xsd:date"/>
 										<xsd:element name="TijdAfspraak" type="xsd:time" minOccurs="0"/>
 										<xsd:element name="DuurAfspraak" type="str:DuurInUren" minOccurs="0"/>

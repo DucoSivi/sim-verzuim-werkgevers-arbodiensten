@@ -1,12 +1,12 @@
 # Medische kaart
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2026.
 
 | | |
 |---|---|
 | Schema | [`xsd/MedischeKaart.xsd`](../xsd/MedischeKaart.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/MedischeKaart/2025` |
-| Versie | 2025.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/MedischeKaart/2026` |
+| Versie | 2026.0 |
 | Elementen | 62 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.

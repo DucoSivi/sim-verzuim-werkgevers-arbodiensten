@@ -1,12 +1,12 @@
 # WerkgeversGegevensBasisregistratie
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2026.
 
 | | |
 |---|---|
 | Schema | [`xsd/WerkgeversGegevensBasisregistratie.xsd`](../xsd/WerkgeversGegevensBasisregistratie.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/WerkgeversGegevensBasisregistratie/2025` |
-| Versie | 2025.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/WerkgeversGegevensBasisregistratie/2026` |
+| Versie | 2026.0 |
 | Elementen | 159 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.

@@ -1,12 +1,12 @@
 # Dienstverbanden
 
-Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2025.
+Verzuimstandaard Werkgevers ↔ Arbodiensten, release 2026.
 
 | | |
 |---|---|
 | Schema | [`xsd/Dienstverbanden.xsd`](../xsd/Dienstverbanden.xsd) |
-| Namespace | `http://www.sivi.org/Verzuimmanagement/Dienstverbanden/2025` |
-| Versie | 2025.0 |
+| Namespace | `http://www.sivi.org/Verzuimmanagement/Dienstverbanden/2026` |
+| Versie | 2026.0 |
 | Elementen | 103 |
 
 Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchie; de volledige toelichting per element staat in de PDF bij de release.
@@ -18,7 +18,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | **`Dienstverbanden`** |  | 1..1 | groep |  |
 | &emsp;**`BrAlg`** | Bericht algemeen | 1..1 | groep |  |
 | &emsp;&emsp;`BrCd` | Bericht, code | 1..1 | an..5 | 00106 |
-| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00005 |
+| &emsp;&emsp;`VnrBrCd` | Versienummer bericht, code | 1..1 | an..5 | 00006 |
 | &emsp;&emsp;`AandatBr` | Aanmaakdatum bericht | 1..1 | datum |  |
 | &emsp;&emsp;`AantijdBr` | Aanmaaktijd bericht | 1..1 | tijd |  |
 | &emsp;&emsp;`IdInzndr` | Identificatie inzender | 1..1 | an..40 |  |
@@ -62,7 +62,7 @@ Deze pagina is afgeleid van de XSD. De namen komen uit de functionele hiërarchi
 | &emsp;&emsp;&emsp;`NivOpldngCd` | Niveau opleiding, code | 0..1 | an2 | 01, 02, 03, 04, 05, 06, 07, 99 |
 | &emsp;&emsp;&emsp;`IdWrknmr` | Identificatie Werknemer | 1..1 | an..40 |  |
 | &emsp;&emsp;&emsp;`IdWrknmrOud` | Identificatie werknemer oud | 0..1 | an..40 |  |
-| &emsp;&emsp;&emsp;**`Dnstvbnd`** | Dienstverband | 1..99 | groep |  |
+| &emsp;&emsp;&emsp;**`Dnstvbnd`** | Dienstverband | 1..999 | groep |  |
 | &emsp;&emsp;&emsp;&emsp;`IngdatMut` | Ingangsdatum mutatie | 0..1 | datum |  |
 | &emsp;&emsp;&emsp;&emsp;`IdDnstvbnd` | Identificatie dienstverband | 1..1 | an..40 |  |
 | &emsp;&emsp;&emsp;&emsp;`IdDnstvbndOud` | Identificatie dienstverband oud | 0..1 | an..40 |  |

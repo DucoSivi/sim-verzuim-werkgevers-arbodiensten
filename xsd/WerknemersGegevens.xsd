@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2025" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2025" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2025.0">
+<xsd:schema xmlns:str="http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2026" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sivi.org/Verzuimmanagement/WerknemerGegevens/2026" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2026.0">
 	<xsd:element name="WerknemerGegevens">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -18,7 +18,7 @@
 								<xsd:simpleType>
 									<xsd:restriction base="xsd:string">
 										<xsd:maxLength value="5"/>
-										<xsd:enumeration value="00006"/>
+										<xsd:enumeration value="00007"/>
 									</xsd:restriction>
 								</xsd:simpleType>
 							</xsd:element>
@@ -223,7 +223,7 @@
 												</xsd:sequence>
 											</xsd:complexType>
 										</xsd:element>
-										<xsd:element name="Dnstvbnd" maxOccurs="99">
+										<xsd:element name="Dnstvbnd" maxOccurs="999">
 											<xsd:complexType>
 												<xsd:sequence>
 													<xsd:element name="IngdatMut" type="xsd:date" minOccurs="0"/>
